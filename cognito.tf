@@ -1,5 +1,7 @@
 resource "aws_cognito_user_pool" "dermoapp_patients_tf4" {
-  name = "dermoapp_patients_tf4"
+  name = "dermoapp_patients_tf5"
+  username_attributes      = ["email"]
+  auto_verified_attributes = ["email"]
   password_policy {
     minimum_length = 8
     require_numbers = true
