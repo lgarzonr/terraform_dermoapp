@@ -1,5 +1,5 @@
-resource "aws_cognito_user_pool" "dermoapp_patients_tf3" {
-  name = "dermoapp_patients_tf"
+resource "aws_cognito_user_pool" "dermoapp_patients_tf4" {
+  name = "dermoapp_patients_tf4"
   password_policy {
     minimum_length = 8
     require_numbers = true
@@ -28,7 +28,7 @@ resource "aws_cognito_user_pool" "dermoapp_patients_tf3" {
     required = true
     string_attribute_constraints {
       min_length = 1
-       max_length = 2048
+      max_length = 2048
     }
   }
   schema {
@@ -37,15 +37,15 @@ resource "aws_cognito_user_pool" "dermoapp_patients_tf3" {
     required = true
     string_attribute_constraints {
       min_length = 1
-       max_length = 2048
+      max_length = 2048
     }
   }
-  # schema {
-  #   name = "city"
-  #   attribute_data_type = "String"
-  #   string_attribute_constraints {
-  #     min_length = 0
-  #     max_length = 0
-  #   }
-  # }
+  schema {
+    name = "city"
+    attribute_data_type = "String"
+    string_attribute_constraints {
+      min_length = 1
+      max_length = 2048
+    }
+  }
 }
