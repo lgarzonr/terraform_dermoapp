@@ -49,3 +49,9 @@ resource "aws_cognito_user_pool" "dermoapp_patients_tf4" {
     }
   }
 }
+
+resource "aws_cognito_user_pool_client" "client_patients_tf" {
+  name = "client_patients_tf"
+
+  user_pool_id = aws_cognito_user_pool.dermoapp_patients_tf4.id
+}
