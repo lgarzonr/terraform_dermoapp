@@ -1,4 +1,4 @@
-resource "aws_cognito_user_pool" "dermoapp_patients_tf" {
+resource "aws_cognito_user_pool" "dermoapp_patients_tf3" {
   name = "dermoapp_patients_tf"
   password_policy {
     minimum_length = 8
@@ -15,20 +15,31 @@ resource "aws_cognito_user_pool" "dermoapp_patients_tf" {
 
   schema {
     attribute_data_type      = "String"
-    name                     = "name"
-    required                 = true
+    name                     = "email"
+    required = true
+    string_attribute_constraints {
+      min_length = 1
+      max_length = 2048
+    }
   }
-
-  # schema {
-  #   attribute_data_type      = "String"
-  #   name                     = "email"
-  #   required                 = true
-  # }
-  # schema {
-  #   name = "birthdate"
-  #   attribute_data_type = "DateTime"
-  #   required                 = true
-  # }
+  schema {
+    attribute_data_type      = "String"
+    name                     = "name"
+    required = true
+    string_attribute_constraints {
+      min_length = 1
+       max_length = 2048
+    }
+  }
+  schema {
+    attribute_data_type      = "String"
+    name                     = "birthdate"
+    required = true
+    string_attribute_constraints {
+      min_length = 1
+       max_length = 2048
+    }
+  }
   # schema {
   #   name = "city"
   #   attribute_data_type = "String"
