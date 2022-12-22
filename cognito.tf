@@ -1,7 +1,6 @@
-resource "aws_cognito_user_pool" "dermoapp_patients_tf4" {
-  name = "dermoapp_patients_tf5"
+resource "aws_cognito_user_pool" "dermoapp_patients" {
+  name = "dermoapp_patients"
   username_attributes      = ["email"]
-  auto_verified_attributes = ["email"]
   password_policy {
     minimum_length = 8
     require_numbers = true
@@ -60,6 +59,10 @@ resource "aws_cognito_user_pool" "dermoapp_patients_tf4" {
 
 resource "aws_cognito_user_pool_client" "client_patients_tf" {
   name = "client_patients_tf"
+  user_pool_id = aws_cognito_user_pool.dermoapp_patients.id
+}
 
-  user_pool_id = aws_cognito_user_pool.dermoapp_patients_tf4.id
+resource "aws_cognito_user_pool_domain" "dermoapp_patients" {
+  domain       = "dermoapp-patients"
+  user_pool_id = aws_cognito_user_pool.dermoapp_patients.id
 }
