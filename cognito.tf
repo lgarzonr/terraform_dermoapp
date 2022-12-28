@@ -16,7 +16,7 @@ resource "aws_cognito_user_pool" "dermoapp_patients" {
 
   schema {
     attribute_data_type = "String"
-    name                = "email"
+    name            = "email"
     required            = true
     string_attribute_constraints {
       min_length = 1
