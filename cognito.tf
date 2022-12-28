@@ -1,5 +1,5 @@
 resource "aws_cognito_user_pool" "dermoapp_patients" {
-  name = "dermoapp_patients"
+  name = "dermoapp_patients_test"
   username_attributes      = ["email"]
   password_policy {
     minimum_length = 8
