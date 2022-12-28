@@ -53,7 +53,7 @@ resource "aws_cognito_user_pool" "dermoapp_patients" {
   verification_message_template {
     default_email_option = "CONFIRM_WITH_LINK"
     email_subject_by_link = "Bienvenido a dermoApp, por favor valide su correo"
-    email_message_by_link = "Bienvenido a dermoApp, Gracias por ser un usuario de dermoApp, para poder continuar es necesario validar su correo electrónico. {##validar correo##} "
+    email_message_by_link = "Bienvenido a dermoApp, Gracias por ser un usuario de dermoApp, para poder continuar es necesario validar su correo electrónico antes de usar la aplicación. {##validar correo##} "
   }
 }
 
